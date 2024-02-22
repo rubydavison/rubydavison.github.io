@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "UK Unemployment", "subtitle": ["People"]},
+  "width": 400,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/rubydavison/rubydavison.github.io/main/Figure_2__Unemployment.csv"
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "color": "green"},
+      "encoding": {
+        "x": {"field": "Period", "type": "temporal", "title": "Period (Q)"},
+        "y": {
+          "field": "People",
+          "type": "quantitative",
+          "title": "Unemployment (%)"
+        }
+      }
+    },
+    {
+      "mark": {"type":"area","opacity":0.3},
+      "encoding": {
+        "x": {"field": "Period", "type": "temporal", "title": "Period (Q)"},
+        "y": {
+          "field": "Women",
+          "type": "quantitative",
+          "title": "Unemployment (%)"
+        },
+        "y2": {
+          "field": "Men",
+          "type": "quantitative",
+          "title": "Unemployment (%)"
+        }
+      }
+    }
+  ]
+}
